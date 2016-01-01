@@ -7,6 +7,9 @@
     	<title>Character Sheet </title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script>
 		
 		$( document ).ready(function() {
@@ -749,7 +752,8 @@
 	
 <!---- Talents Information --->		
 
-		<ul> Tier 1 Talents
+		<ul> Tier Talents
+			<div data-role="collapsible">
 			<li><label><input type='checkbox' value="Tier1"></label>Tier 1</li>
 				<ul>
 					<li>Slingshot</li>
@@ -845,6 +849,7 @@
 							<li>Nimble</li>
 						</ul>
 				</ul>
+			</div>
 			<li><label><input type='checkbox' value="Tier2"></label>Tier 2</li>
 				<ul>
 					<li>Alchemist</li>
