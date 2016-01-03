@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 
 <head>
 
-    	<title>Character Sheet </title>
-	<link rel="stylesheet" href="style.css">
+    <title>Character Sheet </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	  <meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script>
-		
-		$( document ).ready(function() {
-			$("p").hide();
-			
-			$("#hide_stuff").hide();
-			$("#hide_stuff2").hide();
-  });
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+
 
 	</script>
 </head>
@@ -134,31 +124,37 @@
 			<td></td>
 			<td>Ability Score</td>
 			<td>Ability Modifier</td>		
-			
+			<td>Point Spend <b id="attri_points">0<b></td>
 		</tr>
 			<td>STR </td>
 			<td id="STR">Base STR </td>
 			<td id="STR_MOD">Mod STR </td>
+			<td><b OnClick="str_up();">up </b><b OnClick="str_down();"> down</b></td>
 		<tr>
 			<td>DEX</td>
 			<td id="DEX">Base DEX</td>
 			<td id="DEX_MOD">Mod DEX</td>
+			<td><b OnClick="dex_up();">up </b><b OnClick="dex_down();"> down</b></td>
 		</tr>
 			<td>CON</td>
 			<td id="CON">Base CON</td>
 			<td id="CON_MOD">Mod CON</td>
+			<td><b OnClick="con_up();">up </b><b OnClick="con_down();"> down</b></td>
 		<tr>
 			<td>INT</td>
 			<td id="INT">Base INT</td>
 			<td id="INT_MOD">Mod INT</td>
+			<td><b OnClick="int_up();">up </b><b OnClick="int_down();"> down</b></td>
 		</tr>
 			<td>WIS</td>
 			<td id="WIS">Base WIS</td>
 			<td id="WIS_MOD">Mod WIS</td>
+			<td><b OnClick="wis_up();">up </b><b OnClick="wis_down();"> down</b></td>
 		<tr>
 			<td>CHA</td>
 			<td id="CHA">Base CHA</td>
 			<td id="CHA_MOD">Mod CHA</td>
+			<td><b OnClick="cha_up();">up </b><b OnClick="cha_down();"> down</b></td>
 		</tr>
 
 	</table>
@@ -405,8 +401,10 @@
 	</table>	
 <br>
 <!-- f class spells -->
-	<table style ="width:30%">
-		<tr>F class
+	<h4 data-toggle="collapse" data-target="#Fclass">F class &emsp; &emsp; <b id="fclass_known">0</b></h4>
+	<div id="Fclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -478,9 +476,12 @@
 			<td >Self</td>
 		</tr>
 	</table>
+	</div>
 <!-- d class spells -->
-	<table style ="width:30%">
-		<tr>D class
+	<h4 data-toggle="collapse" data-target="#Dclass">D class &emsp; &emsp; <b id="dclass_known">0</b></h4>
+	<div id="Dclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -567,9 +568,12 @@
 			<td>60ft</td>
 		</tr>	
 	</table>
+	</div>
 <!-- c class spells -->	
-	<table style ="width:30%">
-		<tr>C class
+	<h4 data-toggle="collapse" data-target="#Cclass">C class &emsp; &emsp; <b id="cclass_known">0</b></h4>
+	<div id="Cclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -630,10 +634,13 @@
 			<td>30hp, 15d, INT mod</td>
 			<td>Melee</td>
 		</tr>
-	</table>	
+	</table>
+	</div>
 <!-- b class spells -->	
-	<table style ="width:30%">
-		<tr>B class
+	<h4 data-toggle="collapse" data-target="#Bclass">B class &emsp; &emsp; <b id="bclass_known">0</b></h4>
+	<div id="Bclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -675,9 +682,12 @@
 			<td>Self, aoe:15ft wide</td>
 		</tr>
 	</table>
+	</div>
 <!-- a class spells -->	
-	<table style ="width:30%">
-		<tr>A class
+	<h4 data-toggle="collapse" data-target="#Aclass">A class &emsp; &emsp; <b id="aclass_known">0</b></h4>
+	<div id="Aclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -714,9 +724,12 @@
 			<td>Melee</td>
 		</tr>
 	</table>
+	</div>
 <!-- s class spells -->	
-	<table style ="width:30%">
-		<tr>S class
+	<h4 data-toggle="collapse" data-target="#Sclass">S class &emsp; &emsp; <b id="sclass_known">0</b></h4>
+	<div id="Sclass" class="collapse">
+	<table style ="width:20%">
+		<tr>
 			<th>Spell Name</th>
 			<th>Damage</th>
 			<th>Range</th>
@@ -747,112 +760,117 @@
 			<td>0</td>
 			<td>Melee</td>
 		</tr>
-	</table>		
-<!--- End of Website Design ---->
-
+		
+	</table>
+	</div>	
 	
+
+
+	<br><br>
 	
 <!---- Talents Information --->		
 
-		<ul> Tier Talents
-			<div data-role="collapsible">
-			<h1><label><input type='checkbox' value="Tier1"></label>Tier 1</h1>
+		<h2>Talents</h2>
+			
+			<h4 data-toggle="collapse" data-target="#tier1">Tier 1</h4>
+				<div id="tier1" class="collapse">
 				<ul>
-					<li>Slingshot</li>
+					<li><input type='checkbox' value="basic">Slingshot</li>
 						<ul>
-							<li>Aim</li>
-							<li>Arrow Stab</li>
-							<li>Suppressing Fire</li>
-							<li>Light Movement</li>
+							<li><input type='checkbox' value="subtalent">Aim</li>
+							<li><input type='checkbox' value="subtalent">Arrow Stab</li>
+							<li><input type='checkbox' value="subtalent">Suppressing Fire</li>
+							<li><input type='checkbox' value="subtalent">Light Movement</li>
 						</ul>
-					<li>Adventure</li>
+					<li><input type='checkbox' value="basic">Adventure</li>
 						<ul>
-							<li>Action Surge</li>
-							<li>Ambidextrous</li>
-							<li>Rampage</li>
-							<li>Beginner WEeapon Training</li>
-							<li>Second Wind</li>
+							<li><input type='checkbox' value="subtalent">Action Surge</li>
+							<li><input type='checkbox' value="subtalent">Ambidextrous</li>
+							<li><input type='checkbox' value="subtalent">Rampage</li>
+							<li><input type='checkbox' value="subtalent">Beginner WEeapon Training</li>
+							<li><input type='checkbox' value="subtalent">Second Wind</li>
 						</ul>
-					<li>Best Friend</li>
+					<li><input type='checkbox' value="basic">Best Friend</li>
 						<ul>
-							<li>Pack Hunter</li>
-							<li>Primal Ferocity</li>
-							<li>Hunt</li>
-							<li>Guard Dog</li>
+							<li><input type='checkbox' value="subtalent">Pack Hunter</li>
+							<li><input type='checkbox' value="subtalent">Primal Ferocity</li>
+							<li><input type='checkbox' value="subtalent">Hunt</li>
+							<li><input type='checkbox' value="subtalent">Guard Dog</li>
 						</ul>
-					<li>Bookworm</li>
+					<li><input type='checkbox' value="basic">Bookworm</li>
 						<ul>
-							<li>+3 Gadgets</li>
-							<li>Prodigy</li>
-							<li>Improvise</li>
-							<li>R&D</li>
+							<li><input type='checkbox' value="subtalent">+3 Gadgets</li>
+							<li><input type='checkbox' value="subtalent">Prodigy</li>
+							<li><input type='checkbox' value="subtalent">Improvise</li>
+							<li><input type='checkbox' value="subtalent">R&D</li>
 						</ul>
-					<li>Favorite Toy</li>
+					<li><input type='checkbox' value="basic">Favorite Toy</li>
 						<ul>
-							<li>Unbreakable Strings</li>
-							<li>Hold</li>
-							<li>Voodoo Doll</li>
-							<li>+2 Gadgets for Puppet</li>
-							<li>Ventriloquism</li>
+							<li><input type='checkbox' value="subtalent">Unbreakable Strings</li>
+							<li><input type='checkbox' value="subtalent">Hold</li>
+							<li><input type='checkbox' value="subtalent">Voodoo Doll</li>
+							<li><input type='checkbox' value="subtalent">+2 Gadgets for Puppet</li>
+							<li><input type='checkbox' value="subtalent">Ventriloquism</li>
 						</ul>
-					<li>Class Clown</li>
+					<li><input type='checkbox' value="basic">Class Clown</li>
 						<ul>
-							<li>Singer</li>
-							<li>Dancer</li>
-							<li>Exercise</li>
-							<li>Entertainer</li>
+							<li><input type='checkbox' value="subtalent">Singer</li>
+							<li><input type='checkbox' value="subtalent">Dancer</li>
+							<li><input type='checkbox' value="subtalent">Exercise</li>
+							<li><input type='checkbox' value="subtalent">Entertainer</li>
 							
 						</ul>
-					<li>Silver Tongue</li>
+					<li><input type='checkbox' value="basic">Silver Tongue</li>
 						<ul>
-							<li>Born Leader</li>
-							<li>Monster Talk</li>
-							<li>Beast Talk</li>
-							<li>Speak Easy</li>
+							<li><input type='checkbox' value="subtalent">Born Leader</li>
+							<li><input type='checkbox' value="subtalent">Monster Talk</li>
+							<li><input type='checkbox' value="subtalent">Beast Talk</li>
+							<li><input type='checkbox' value="subtalent">Speak Easy</li>
 							
 						</ul>
-					<li>Hooligan</li>
+					<li><input type='checkbox' value="basic">Hooligan</li>
 						<ul>
-							<li>Quick Reflex</li>
-							<li>Soft Steps</li>
-							<li>Focus</li>
-							<li>Leg Sweep</li>
-							<li>Tough</li>
+							<li><input type='checkbox' value="subtalent">Quick Reflex</li>
+							<li><input type='checkbox' value="subtalent">Soft Steps</li>
+							<li><input type='checkbox' value="subtalent">Focus</li>
+							<li><input type='checkbox' value="subtalent">Leg Sweep</li>
+							<li><input type='checkbox' value="subtalent">Tough</li>
 						</ul>
-					<li>Novice</li>
+					<li><input type='checkbox' value="basic">Novice</li>
 						<ul>
-							<li>Learning</li>
-							<li>True Talent</li>
-							<li>Poof</li>
-							<li>Smart</li>
-							<li>Imaginary Friend</li>
+							<li><input type='checkbox' value="subtalent">Learning</li>
+							<li><input type='checkbox' value="subtalent">True Talent</li>
+							<li><input type='checkbox' value="subtalent">Poof</li>
+							<li><input type='checkbox' value="subtalent">Smart</li>
+							<li><input type='checkbox' value="subtalent">Imaginary Friend</li>
 						</ul>
-					<li>Natural Gift</li>
+					<li><input type='checkbox' value="basic">Natural Gift</li>
 						<ul>
-							<li>Precision</li>
-							<li>6th Sense</li>
-							<li>Mind and Body</li>
-							<li>+1 Psychic Ability</li>
+							<li><input type='checkbox' value="subtalent">Precision</li>
+							<li><input type='checkbox' value="subtalent">6th Sense</li>
+							<li><input type='checkbox' value="subtalent">Mind and Body</li>
+							<li><input type='checkbox' value="subtalent">+1 Psychic Ability</li>
 							
 						</ul>
-					<li>Genetic</li>
+					<li><input type='checkbox' value="basic">Genetic</li>
 						<ul>
-							<li>Giant</li>
-							<li>Genious</li>
-							<li>Luck</li>
-							<li>Runt</li>
+							<li><input type='checkbox' value="subtalent">Giant</li>
+							<li><input type='checkbox' value="subtalent">Genious</li>
+							<li><input type='checkbox' value="subtalent">Luck</li>
+							<li><input type='checkbox' value="subtalent">Runt</li>
 							
 						</ul>
-					<li>Prankster</li>
+					<li><input type='checkbox' value="basic">Prankster</li>
 						<ul>
-							<li>Sneak Attack</li>
-							<li>Crafty</li>
-							<li>Blend</li>
-							<li>Nimble</li>
+							<li><input type='checkbox' value="subtalent">Sneak Attack</li>
+							<li><input type='checkbox' value="subtalent">Crafty</li>
+							<li><input type='checkbox' value="subtalent">Blend</li>
+							<li><input type='checkbox' value="subtalent">Nimble</li>
 						</ul>
 				</ul>
-			</div>
-			<li><label><input type='checkbox' value="Tier2"></label>Tier 2</li>
+				</div>
+			<h4 data-toggle="collapse" data-target="#tier2">Tier 2</h4>
+				<div id="tier2" class="collapse">
 				<ul>
 					<li>Alchemist</li>
 					<li>Blacksmith</li>
@@ -868,7 +886,9 @@
 					<li>Legionnaire</li>
 					<li>Full-Fledged Mage</li>
 				</ul>
-			<li><label><input type='checkbox' value="Tier3"></label>Tier 3</li>
+				</div>
+			<h4 data-toggle="collapse" data-target="#tier3">Tier 3</h4>
+				<div id="tier3" class="collapse">
 				<ul>
 					<li>Archmage</li>
 					<li>Summoner</li>
@@ -880,14 +900,15 @@
 					<li>Inventor</li>
 					<li>Spy Master</li>
 				</ul>
-		</ul>	
+				</div>
+			
 	
-	
+<!--- End of Website Design ---->	
 	<p>More coming soon! #workonit</p>
 	<hr>
 	<!-- Sign and date the page, it's only polite! -->
 	<address>Made 15 December 2015<br>
-		by myself.</address>	
+		created by Drip Drop Gaming (Kevin Shelton).</address>	
 	
 
 
@@ -910,6 +931,14 @@
 	var INT_Base_Mod = 0;
 	var WIS_Base_Mod = 0;
 	var CHA_Base_Mod = 0;
+	var free_stat_points = 0;
+	var STR_Temp = 0;
+	var DEX_Temp = 0;
+	var CON_Temp = 0;
+	var INT_Temp = 0;
+	var WIS_Temp = 0;
+	var CHA_Temp = 0;
+	
 <!-- Buildings --->	
 	var Prof_Bonus = 2;
 	var Forge_Damage = 0;
@@ -936,6 +965,12 @@
 	var spell_bonusdamage = 0;
 	var spell_hit= 0;
 	var spell_dcsave =0;
+	var spells_known_f =0;
+	var spells_known_d = 0;
+	var spells_known_c = 0;
+	var spells_known_b = 0;
+	var spells_known_a =0;
+	var spells_known_s = 0;
 	
 <!-- Error Tester -->
 	function msg() {
@@ -944,26 +979,39 @@
 	
 <!-- Determine Prof Bonus -->
 	function ProfBonus()
-{	
+	{	
 	var town = document.getElementById("Town_Size").value;
 	
 	
 	if( town == "Village")
+	{
 		Prof_Bonus = 3;
+		free_stat_points += 2;
+	}	
 	else if( town == "Town")
+	{
 		Prof_Bonus = 4;
+		free_stat_points += 2;
+	}	
 	else if( town == "City")
+	{
 		Prof_Bonus = 5;
+		free_stat_points += 2;
+	}
 	else if( town == "Metropolis")
+	{
 		Prof_Bonus = 6;
+		free_stat_points += 2;
+	}
 	else
 		Prof_Bonus = 2;
-
+	
+	document.getElementById("attri_points").innerHTML = free_stat_points;
 	skills();
 }
 
 	function LibraryBonus()
-{	
+	{	
 	var library = document.getElementById("Library_Size").value;
 	
 	document.getElementById("F_class").innerHTML = "&#8734";
@@ -1032,7 +1080,7 @@
 }
 
 	function ForgeBonus()
-{	
+	{	
 	var forge= document.getElementById("Forge_Size").value;
 	
 	if( forge == "Sm_forge")
@@ -1106,7 +1154,7 @@
 
 <!-- Armor and Hit Points -->
 	function Armor()
-{
+	{
 	var x = document.getElementById("Armor_Class").value;
 	var y = document.getElementById("charRace").value;
 	var HP_Armor = 0;
@@ -1138,17 +1186,17 @@
 	}	
 	else
 	{
-		AC_Armor = 10 + Math.floor((CON_Base-10)/2)+ Math.floor((DEX_Base-10)/2);
+		AC_Armor = 10 + Math.floor((CON_Base-10)/2)+ Math.floor((DEX_Temp-10)/2);
 		HP_Armor = 8;
 	}
 		
 	
-	document.getElementById("Base_Hp").innerHTML = HP_Armor + Math.floor((CON_Base-10)/2) + HP_Bonus;
+	document.getElementById("Base_Hp").innerHTML = HP_Armor + Math.floor((CON_Temp-10)/2) + HP_Bonus;
 	document.getElementById("Armor_Check").innerHTML = AC_Armor + Armor_Bonus; 
 }	
 <!-- Weapons and Legendary Weapons -->
 	function Weapon()
-{
+	{
 	var x = 0; 
 	
 	if(weapon_number == 1)
@@ -1175,12 +1223,12 @@
 		
 		if(document.getElementById("Two_Hand").checked || document.getElementById("Two_Hand2").checked)
 		{
-			Weapon_Damage = 12+Forge_Damage+STR_Base_Mod;
+			Weapon_Damage = 12+Forge_Damage+Math.floor((STR_Temp-10)/2);
 		}
 			
 		else
 		{
-			Weapon_Damage = 10+Forge_Damage+STR_Base_Mod;
+			Weapon_Damage = 10+Forge_Damage+Math.floor((STR_Temp-10)/2);
 		}
 		
 		Weapon_Range = 5;
@@ -1191,12 +1239,12 @@
 		light_weapon = 0;
 		if(document.getElementById("Two_Hand").checked || document.getElementById("Two_Hand2").checked)
 		{
-			Weapon_Damage = 8+Forge_Damage+STR_Base_Mod;	
+			Weapon_Damage = 8+Forge_Damage+Math.floor((STR_Temp-10)/2);	
 		}
 			
 		else
 		{
-			Weapon_Damage = 6+Forge_Damage+STR_Base_Mod;
+			Weapon_Damage = 6+Forge_Damage+Math.floor((STR_Temp-10)/2);
 		}
 		Weapon_Range = 10;
 		
@@ -1211,20 +1259,20 @@
 			
 		else
 		{
-			Weapon_Damage = 4+Forge_Damage+STR_Base_Mod+DEX_Base_Mod;
+			Weapon_Damage = 4+Forge_Damage+Math.floor((STR_Temp-10)/2)+Math.floor((DEX_Temp-10)/2);
 		}
 		Weapon_Range = 5;
 		
 	}
 <!-- Determine Hit chance -->
-	if(STR_Base_Mod > DEX_Base_Mod)
+	if(STR_Temp > DEX_Temp)
 		{
-			Weapon_HitChance = STR_Base_Mod+Martial_Prof+Hit_Chance_Bonus - Offhand_Penalty + light_weapon;
+			Weapon_HitChance = Math.floor((STR_Temp-10)/2)+Martial_Prof+Hit_Chance_Bonus - Offhand_Penalty + light_weapon;
 		}
 			
 		else
 		{
-			Weapon_HitChance = DEX_Base_Mod+Martial_Prof+Hit_Chance_Bonus - Offhand_Penalty+light_weapon;
+			Weapon_HitChance = Math.floor((DEX_Temp-10)/2)+Martial_Prof+Hit_Chance_Bonus - Offhand_Penalty+light_weapon;
 		}
 <!-- Determine which weapon is being updated--->
 	if(weapon_number == 1)
@@ -1255,25 +1303,27 @@
 
 }
 	function Duel_Weapon()
-{
+	{
+	
 	if(document.getElementById("Duel_Wield").checked)
 	{
-		$("#hide_stuff").show();
+		
+		$("#hide_stuff").removeClass('hidden');
 		Offhand_Penalty = 4;
 	}
 	else
 	{
-		$("#hide_stuff").hide();
+		$("#hide_stuff").addClass('hidden');
 		Offhand_Penalty = 0;
 	}
 	if(document.getElementById("Duel_Wield_2").checked)
 	{
-		$("#hide_stuff2").show();
+		$("#hide_stuff2").removeClass('hidden');
 		Offhand_Penalty = 4;
 	}
 	else
 	{
-		$("#hide_stuff2").hide();
+		$("#hide_stuff2").addClass('hidden');
 		Offhand_Penalty = 0;
 	}
 	
@@ -1281,28 +1331,28 @@
 }
 	
 	function Weapon_1()
-{
+	{
 	weapon_number = 1; 
 	Weapon();
 }
 	function Offhand_1()
-{
+	{
 	weapon_number = 2; 
 	Weapon();
 }
 	function Weapon_2()
-{
+	{
 	weapon_number = 3; 
 	Weapon();
 }
 	function Offhand_2()
-{
+	{
 	weapon_number = 4; 
 	Weapon();
 }
 <!-- funtion used to determine the character stats -->
 	function stats()
-{
+	{
 	var x = document.getElementById("charRace").value;
 	
 
@@ -1320,13 +1370,6 @@
 		document.getElementById("INT").innerHTML = INT_Base;
 		document.getElementById("WIS").innerHTML = WIS_Base;
 		document.getElementById("CHA").innerHTML = CHA_Base;
-
-		document.getElementById("STR_MOD").innerHTML = Math.floor((STR_Base-10)/2);
-		document.getElementById("DEX_MOD").innerHTML = Math.floor((DEX_Base-10)/2);
-		document.getElementById("CON_MOD").innerHTML = Math.floor((CON_Base-10)/2);
-		document.getElementById("INT_MOD").innerHTML = Math.floor((INT_Base-10)/2);
-		document.getElementById("WIS_MOD").innerHTML = Math.floor((WIS_Base-10)/2);
-		document.getElementById("CHA_MOD").innerHTML = Math.floor((CHA_Base-10)/2);
 
 		document.getElementById("Base_Speed").innerHTML = 35;
 		document.getElementById("Base_Init").innerHTML = Math.floor((DEX_Base-10)/2);	
@@ -1346,13 +1389,6 @@
 		document.getElementById("WIS").innerHTML = WIS_Base;
 		document.getElementById("CHA").innerHTML = CHA_Base;
 
-		document.getElementById("STR_MOD").innerHTML = Math.floor((STR_Base-10)/2);
-		document.getElementById("DEX_MOD").innerHTML = Math.floor((DEX_Base-10)/2);
-		document.getElementById("CON_MOD").innerHTML = Math.floor((CON_Base-10)/2);
-		document.getElementById("INT_MOD").innerHTML = Math.floor((INT_Base-10)/2);
-		document.getElementById("WIS_MOD").innerHTML = Math.floor((WIS_Base-10)/2);
-		document.getElementById("CHA_MOD").innerHTML = Math.floor((CHA_Base-10)/2);
-
 		document.getElementById("Base_Speed").innerHTML = 35;
 		document.getElementById("Base_Init").innerHTML = Math.floor((DEX_Base-10)/2);	
 	}
@@ -1371,12 +1407,7 @@
 		document.getElementById("WIS").innerHTML = WIS_Base;
 		document.getElementById("CHA").innerHTML = CHA_Base;
 
-		document.getElementById("STR_MOD").innerHTML = Math.floor((STR_Base-10)/2);
-		document.getElementById("DEX_MOD").innerHTML = Math.floor((DEX_Base-10)/2);
-		document.getElementById("CON_MOD").innerHTML = Math.floor((CON_Base-10)/2);
-		document.getElementById("INT_MOD").innerHTML = Math.floor((INT_Base-10)/2);
-		document.getElementById("WIS_MOD").innerHTML = Math.floor((WIS_Base-10)/2);
-		document.getElementById("CHA_MOD").innerHTML = Math.floor((CHA_Base-10)/2);
+
 
 		document.getElementById("Base_Speed").innerHTML = 35;
 		document.getElementById("Base_Init").innerHTML = Math.floor((DEX_Base-10)/2);	
@@ -1396,15 +1427,27 @@
 	INT_Base_Mod = Math.floor((INT_Base-10)/2);
 	WIS_Base_Mod = Math.floor((WIS_Base-10)/2);
 	CHA_Base_Mod = Math.floor((CHA_Base-10)/2);
+	
+	document.getElementById("STR_MOD").innerHTML = Math.floor((STR_Base-10)/2);
+	document.getElementById("DEX_MOD").innerHTML = Math.floor((DEX_Base-10)/2);
+	document.getElementById("CON_MOD").innerHTML = Math.floor((CON_Base-10)/2);
+	document.getElementById("INT_MOD").innerHTML = Math.floor((INT_Base-10)/2);
+	document.getElementById("WIS_MOD").innerHTML = Math.floor((WIS_Base-10)/2);
+	document.getElementById("CHA_MOD").innerHTML = Math.floor((CHA_Base-10)/2);
+	
+	STR_Temp = STR_Base;
+	DEX_Temp = DEX_Base;
+	CON_Temp = CON_Base;
+	INT_Temp = INT_Base;
+	WIS_Temp = WIS_Base;
+	CHA_Temp = CHA_Base;
+	
 
-	skills();
-	Armor();
-	Weapon();
 }
 
 <!-- funtion used to determine the character skills -->
 function skills()
-{
+	{
 	
 	var fitness = document.getElementById("tf_Fitness").value;
 	var handling = document.getElementById("tf_Handling").value;
@@ -1422,82 +1465,287 @@ function skills()
 	var surv = document.getElementById("tf_Survival").value;
 
 	
-	
 
 	if(STR_Base > DEX_Base && fitness == "true")
-		document.getElementById("Prof_Fitness").innerHTML = Math.floor((STR_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Fitness").innerHTML = Math.floor((STR_Temp-10)/2)+ Prof_Bonus;
 	else if(STR_Base <= DEX_Base && fitness == "true")
-		document.getElementById("Prof_Fitness").innerHTML = Math.floor((DEX_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Fitness").innerHTML = Math.floor((DEX_Temp-10)/2)+ Prof_Bonus;
 	else if(STR_Base < DEX_Base)
-		document.getElementById("Prof_Fitness").innerHTML = Math.floor((DEX_Base-10)/2);
+		document.getElementById("Prof_Fitness").innerHTML = Math.floor((DEX_Temp-10)/2);
 	else
-		document.getElementById("Prof_Fitness").innerHTML = Math.floor((STR_Base-10)/2);
+		document.getElementById("Prof_Fitness").innerHTML = Math.floor((STR_Temp-10)/2);
 
 
 	if(handling == "true")
-		document.getElementById("Prof_Handling").innerHTML = Math.floor((WIS_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Handling").innerHTML = Math.floor((WIS_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Handling").innerHTML = Math.floor((WIS_Base-10)/2);
+		document.getElementById("Prof_Handling").innerHTML = Math.floor((WIS_Temp-10)/2);
 	if(arcana == "true")
-		document.getElementById("Prof_Arcana").innerHTML = Math.floor((INT_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Arcana").innerHTML = Math.floor((INT_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Arcana").innerHTML = Math.floor((INT_Base-10)/2);
+		document.getElementById("Prof_Arcana").innerHTML = Math.floor((INT_Temp-10)/2);
 	if(Decep == "true")
-		document.getElementById("Prof_Deception").innerHTML = Math.floor((CHA_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Deception").innerHTML = Math.floor((CHA_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Deception").innerHTML = Math.floor((CHA_Base-10)/2);
+		document.getElementById("Prof_Deception").innerHTML = Math.floor((CHA_Temp-10)/2);
 
 	if(history == "true")
-		document.getElementById("Prof_History").innerHTML = Math.floor((INT_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_History").innerHTML = Math.floor((INT_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_History").innerHTML = Math.floor((INT_Base-10)/2);
+		document.getElementById("Prof_History").innerHTML = Math.floor((INT_Temp-10)/2);
 
 	if(imtim == "true")
-		document.getElementById("Prof_Intimidation").innerHTML = Math.floor((CHA_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Intimidation").innerHTML = Math.floor((CHA_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Intimidation").innerHTML = Math.floor((CHA_Base-10)/2);
+		document.getElementById("Prof_Intimidation").innerHTML = Math.floor((CHA_Temp-10)/2);
 
 	if(invest == "true")
-		document.getElementById("Prof_Investigation").innerHTML = Math.floor((INT_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Investigation").innerHTML = Math.floor((INT_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Investigation").innerHTML = Math.floor((INT_Base-10)/2);
+		document.getElementById("Prof_Investigation").innerHTML = Math.floor((INT_Temp-10)/2);
 
 	if(medi == "true")
-		document.getElementById("Prof_Medicine").innerHTML = Math.floor((WIS_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Medicine").innerHTML = Math.floor((WIS_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Medicine").innerHTML = Math.floor((WIS_Base-10)/2);
+		document.getElementById("Prof_Medicine").innerHTML = Math.floor((WIS_Temp-10)/2);
 
 	if(percep == "true")
-		document.getElementById("Prof_Perception").innerHTML = Math.floor((WIS_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Perception").innerHTML = Math.floor((WIS_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Perception").innerHTML = Math.floor((WIS_Base-10)/2);
+		document.getElementById("Prof_Perception").innerHTML = Math.floor((WIS_Temp-10)/2);
 
 	if(perform == "true")
-		document.getElementById("Prof_Performance").innerHTML = Math.floor((CHA_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Performance").innerHTML = Math.floor((CHA_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Performance").innerHTML = Math.floor((CHA_Base-10)/2);
+		document.getElementById("Prof_Performance").innerHTML = Math.floor((CHA_Temp-10)/2);
 
 	if(persu == "true")
-		document.getElementById("Prof_Persuasion").innerHTML = Math.floor((CHA_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Persuasion").innerHTML = Math.floor((CHA_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Persuasion").innerHTML = Math.floor((CHA_Base-10)/2);
+		document.getElementById("Prof_Persuasion").innerHTML = Math.floor((CHA_Temp-10)/2);
 	if(relig == "true")
-		document.getElementById("Prof_Religion").innerHTML = Math.floor((INT_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Religion").innerHTML = Math.floor((INT_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Religion").innerHTML = Math.floor((INT_Base-10)/2);
+		document.getElementById("Prof_Religion").innerHTML = Math.floor((INT_Temp-10)/2);
 	if(slight == "true")
-		document.getElementById("Prof_Slight").innerHTML = Math.floor((DEX_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Slight").innerHTML = Math.floor((DEX_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Slight").innerHTML = Math.floor((DEX_Base-10)/2);
+		document.getElementById("Prof_Slight").innerHTML = Math.floor((DEX_Temp-10)/2);
 	if(surv == "true")
-		document.getElementById("Prof_Survival").innerHTML = Math.floor((WIS_Base-10)/2)+ Prof_Bonus;
+		document.getElementById("Prof_Survival").innerHTML = Math.floor((WIS_Temp-10)/2)+ Prof_Bonus;
 	else
-		document.getElementById("Prof_Survival").innerHTML = Math.floor((WIS_Base-10)/2);
+		document.getElementById("Prof_Survival").innerHTML = Math.floor((WIS_Temp-10)/2);
 
 }
 
-
+	function str_up()
+	{
 	
+	if(free_stat_points > 0)
+	{
+		STR_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("STR").innerHTML = STR_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function str_down()
+	{
+	
+	if((STR_Temp-1) >= STR_Base)
+	{
+		STR_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("STR").innerHTML = STR_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function dex_up()
+	{
+	
+	if(free_stat_points > 0)
+	{
+		DEX_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("DEX").innerHTML = DEX_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function dex_down()
+	{
+	
+	if((DEX_Temp-1) >= DEX_Base)
+	{
+		DEX_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("DEX").innerHTML = DEX_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+
+	function con_up()
+	{
+	
+	if(free_stat_points > 0)
+	{
+		CON_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("CON").innerHTML = CON_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function con_down()
+	{
+	
+	if((CON_Temp-1) >= CON_Base)
+	{
+		CON_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("CON").innerHTML = CON_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+
+	function int_up()
+	{
+	
+	if(free_stat_points > 0)
+	{
+		INT_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("INT").innerHTML = INT_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function int_down()
+	{
+	
+	if((INT_Temp-1) >= INT_Base)
+	{
+		INT_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("INT").innerHTML = INT_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function wis_up()
+	{
+	
+	if(free_stat_points > 0)
+	{
+		WIS_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("WIS").innerHTML = WIS_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function wis_down()
+	{
+	
+	if((WIS_Temp-1) >= WIS_Base)
+	{
+		WIS_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("WIS").innerHTML = WIS_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function cha_up()
+	{
+	
+	if(free_stat_points > 0)
+	{
+		CHA_Temp += 1;
+		free_stat_points -= 1;
+		document.getElementById("CHA").innerHTML = CHA_Temp;
+	}	
+	else
+		alert("no stat points to spend");
+		
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function cha_down()
+	{
+	
+	if((CHA_Temp-1) >= CHA_Base)
+	{
+		CHA_Temp -= 1;
+		free_stat_points += 1;
+		document.getElementById("CHA").innerHTML = CHA_Temp;
+	}	
+	else
+		alert("attribute can't be reduced further");
+		
+	document.getElementById("attri_points").innerHTML = free_stat_points;
+	change_of_stat();
+}
+	function change_of_stat()
+	{
+	
+	document.getElementById("STR_MOD").innerHTML = Math.floor((STR_Temp-10)/2);
+	document.getElementById("DEX_MOD").innerHTML = Math.floor((DEX_Temp-10)/2);
+	document.getElementById("CON_MOD").innerHTML = Math.floor((CON_Temp-10)/2);
+	document.getElementById("INT_MOD").innerHTML = Math.floor((INT_Temp-10)/2);
+	document.getElementById("WIS_MOD").innerHTML = Math.floor((WIS_Temp-10)/2);
+	document.getElementById("CHA_MOD").innerHTML = Math.floor((CHA_Temp-10)/2);
+	
+	
+	skills();
+	Armor();
+	Weapon();
+}
+	
+	function talent()
+	{
+		
+	}
 
 </script> 
 
